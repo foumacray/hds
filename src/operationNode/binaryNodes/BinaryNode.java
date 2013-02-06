@@ -5,11 +5,17 @@
 package operationNode.binaryNodes;
 
 import operationNode.OperationNode;
+import sintaxtrie.Node;
 
 /**
  *
  * @author pedro
  */
-public interface BinaryNode extends OperationNode{
-    
+public abstract class BinaryNode implements OperationNode{
+    Node leftChild;
+    Node rightChild;
+    public void addchild(Node LeftChild, Node RightChild){
+        leftChild = LeftChild;
+        rightChild = RightChild;
+    }
 }

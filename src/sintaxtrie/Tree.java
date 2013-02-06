@@ -11,9 +11,17 @@ import operationNode.OperationNode;
  * @author pedro
  */
 public class Tree {
- private OperationNode Dad;
+ private Node root;
  
  public Tree(){
-     Dad = null;
+     root = null;
  }
+ public void addRoot(Node node){
+     root=node;
+ }
+
+    public Node getRoot() {
+        return root;
+    }
+ 
 }

@@ -4,10 +4,19 @@
  */
 package operationNode.unaryNodes;
 
+import sintaxtrie.Node;
+
 /**
  *
  * @author pedro
  */
-public class SinNode {
+public class SinNode extends UnaryNode {
+ public SinNode(Node child) {
+        this.child = child;
+    }
+    @Override
+    public double evaluate() {
+          return Math.sin(child.evaluate());
+    }
     
 }

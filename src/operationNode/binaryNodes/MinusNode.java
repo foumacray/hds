@@ -4,10 +4,20 @@
  */
 package operationNode.binaryNodes;
 
+import sintaxtrie.Node;
+
 /**
  *
  * @author pedro
  */
-public class MinusNode {
+public class MinusNode extends BinaryNode {
+    public MinusNode(Node left,Node right) {
+        this.leftChild=left;
+        this.rightChild=right;
+    }
+    @Override
+    public double evaluate() {
+         return leftChild.evaluate() - rightChild.evaluate();
+    }
     
 }

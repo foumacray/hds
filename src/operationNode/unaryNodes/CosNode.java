@@ -4,11 +4,20 @@
  */
 package operationNode.unaryNodes;
 
+import sintaxtrie.Node;
+
 /**
  *
  * @author pedro
  */
-public class CosNode implements UnaryNode {
+public class CosNode extends UnaryNode {
+ public CosNode(Node child) {
+        this.child = child;
+    }
+    @Override
+    public double evaluate() {
+      return Math.cos(child.evaluate());
+    }
    
     
 }

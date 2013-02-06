@@ -13,6 +13,10 @@ import sintaxtrie.Node;
  */
 public class NumberNode implements Node{
     double number;
+    
+    public NumberNode(int Number){
+    number=Number;
+    }
     @Override
     public double evaluate() {
        return number;
