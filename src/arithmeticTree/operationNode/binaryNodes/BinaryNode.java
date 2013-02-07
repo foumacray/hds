@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package operationNode.binaryNodes;
+package arithmeticTree.operationNode.binaryNodes;
 
-import operationNode.OperationNode;
+import arithmeticTree.operationNode.OperationNode;
 import sintaxtrie.Node;
 
 /**

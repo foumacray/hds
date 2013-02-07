@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package operationNode.unaryNodes;
+package arithmeticTree.operationNode.unaryNodes;
 
-import operationNode.OperationNode;
-import operationNode.OperationNode;
+import arithmeticTree.operationNode.OperationNode;
+import arithmeticTree.operationNode.OperationNode;
 import sintaxtrie.Node;
 import java.math.*;
 

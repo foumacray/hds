@@ -4,7 +4,7 @@
  */
 package sintaxtrie;
 
-import operationNode.OperationNode;
+import arithmeticTree.operationNode.OperationNode;
 
 /**
  *

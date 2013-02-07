@@ -4,11 +4,12 @@
  */
 package sintaxtrie;
 
-import operationNode.binaryNodes.PlusNode;
-import operationNode.binaryNodes.TimesNode;
-import operationNode.unaryNodes.CosNode;
-import operationNode.unaryNodes.UnaryNode;
-import valueNode.NumberNode;
+import comun.VariantNode.VariantNode;
+import arithmeticTree.operationNode.binaryNodes.PlusNode;
+import arithmeticTree.operationNode.binaryNodes.TimesNode;
+import arithmeticTree.operationNode.unaryNodes.CosNode;
+import arithmeticTree.operationNode.unaryNodes.UnaryNode;
+import comun.valueNode.ConstantNode;
 
 /**
  *
@@ -21,12 +22,19 @@ public class SintaxTrie {
      */
     public static void main(String[] args) {
        Tree miarbol = new Tree();
-       Node numero = new NumberNode(2);
-       Node numero1 = new NumberNode(3);
-       Node numero2 = new NumberNode(5);
+       Node numero = new ConstantNode(2);
+       Node numero1 = new ConstantNode(3);
+       Node numero2 = new ConstantNode(5);
        Node times = new TimesNode(numero1,numero2);
        Node plus = new PlusNode(numero,times);
        miarbol.addRoot(plus);
-       System.out.print(miarbol.getRoot().evaluate());
+       System.out.print(miarbol.getRoot().evaluate()+" ");
+       
+       Node variante =  new VariantNode("x", 5);
+       Node cos =new CosNode(variante);
+       miarbol.addRoot(cos);
+        System.out.print(miarbol.getRoot().evaluate());
+       ((VariantNode)variante).setValue(1);
+        System.out.print(miarbol.getRoot().evaluate());
     }
 }

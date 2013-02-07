@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package valueNode;
+package comun.valueNode;
 
 import sintaxtrie.Node;
 import sintaxtrie.Node;
@@ -11,10 +11,10 @@ import sintaxtrie.Node;
  *
  * @author pedro
  */
-public class NumberNode implements Node{
+public class ConstantNode implements Node{
     double number;
     
-    public NumberNode(int Number){
+    public ConstantNode(int Number){
     number=Number;
     }
     @Override

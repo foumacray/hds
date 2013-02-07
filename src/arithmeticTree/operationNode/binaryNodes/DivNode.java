@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package operationNode.binaryNodes;
+package arithmeticTree.operationNode.binaryNodes;
 
 import sintaxtrie.Node;
 
@@ -10,14 +10,14 @@ import sintaxtrie.Node;
  *
  * @author pedro
  */
-public class PlusNode extends BinaryNode{
-public PlusNode(Node left,Node right) {
+public class DivNode extends BinaryNode{
+    public DivNode(Node left,Node right) {
         this.leftChild=left;
         this.rightChild=right;
     }
     @Override
     public double evaluate() {
-       return leftChild.evaluate()+rightChild.evaluate();
+         return leftChild.evaluate() / rightChild.evaluate();
     }
     
 }
