@@ -16,8 +16,15 @@ public class DivNode extends BinaryNode{
         this.rightChild=right;
     }
     @Override
-    public double evaluate() {
+    public double evaluate() throws DivException {
+        if (rightChild.evaluate()==0) throw new DivException(); 
          return leftChild.evaluate() / rightChild.evaluate();
     }
-    
+
+    public static class DivException extends RuntimeException {
+
+        public DivException() {
+            
+        }
+    }
 }

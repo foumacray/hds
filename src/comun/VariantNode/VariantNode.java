@@ -19,6 +19,10 @@ public class VariantNode implements Node {
         this.value = Value;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public double getValue() {
         return value;
     }
