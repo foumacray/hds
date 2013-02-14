@@ -4,6 +4,7 @@
  */
 
 import arithmeticTree.operationNode.binaryNodes.PlusNode;
+import arithmeticTree.operationNode.binaryNodes.TimesNode;
 import comun.VariantNode.VariantNode;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -13,16 +14,17 @@ import sintaxtrie.Node;
  *
  * @author pedro
  */
-public class PlusNodeTest {
+public class TimesNodeTest {
     @Test
-    public void PlusNodeTest() {
+    public void TimesNodeTest() {
+ 
        Node x = new VariantNode("x", -2);
        Node y = new VariantNode("y", 1);
-       Node add = new PlusNode(x, y);
-       assertEquals(-1, add.evaluate(),0);
+       Node times = new TimesNode(x, y);
+       assertEquals(-2, times.evaluate(),0);
     
-       ((VariantNode)y).setValue(2);
-       assertEquals(0, add.evaluate(),0);
+       ((VariantNode)y).setValue(-2);
+       assertEquals(4, times.evaluate(),0);
        
     }
 }
