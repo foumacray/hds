@@ -1,10 +1,10 @@
 package comun.value;
 
-public class DoubleValue {
+public class Value {
 
     private double value;
 
-    public DoubleValue(double value) {
+    public Value(double value) {
         this.value = value;
     }
 
