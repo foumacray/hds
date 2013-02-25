@@ -1,17 +1,18 @@
 package comun.valueNode;
 
 import sintaxtrie.Node;
+import sintaxtrie.Value;
 
-public class Constant implements Node {
+public class Constant  implements Node {
 
-    double number;
+    Value number;
 
-    public Constant(int Number) {
-        number = Number;
+    public Constant(Value number) {
+        this.number = number;
     }
 
     @Override
-    public double evaluate() {
-        return number;
+    public Object evaluate() {
+        return number.getObjeto();
     }
 }

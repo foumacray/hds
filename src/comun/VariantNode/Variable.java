@@ -1,31 +1,32 @@
 package comun.VariantNode;
 
 import sintaxtrie.Node;
+import sintaxtrie.Value;
 
 public class Variable implements Node {
 
     private String name;
-    private double value;
+    private Value number;
 
-    public Variable(String name, int value) {
+    public Variable(String name, Value value) {
         this.name = name;
-        this.value = value;
+        this.number = value;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getValue() {
-        return value;
+    public Object getValue() {
+        return number;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setValue(Value value) {
+        this.number = value;
     }
 
     @Override
-    public double evaluate() {
-        return value;
+    public Object evaluate() {
+        return number.getObjeto();
     }
 }
