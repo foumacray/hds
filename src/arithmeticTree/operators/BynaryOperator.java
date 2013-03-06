@@ -1,45 +1,45 @@
 package arithmeticTree.operators;
+
+import Calculator.types.BooleanCalculator;
 import Calculator.types.NumberCalculator;
 import java.lang.reflect.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sintaxtrie.Node;
+import sintaxtrie.Token;
 import sintaxtrie.Value;
 
-public class BynaryOperator implements Operator {
-    private String name;
-    protected Node leftChild;
-    protected Node rightChild;
+public class BynaryOperator extends Operation {
 
-    public BynaryOperator(String name, Node leftChild, Node rightChild) {
-        this.name = name;
+    private Operator operator;
+    protected Token leftChild;
+    protected Token rightChild;
+
+    public BynaryOperator(Operator operator, Token leftChild, Token rightChild) {
+        this.operator = operator;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
-  
-    public Node getLeftChild() {
+
+    public Token getLeftChild() {
         return leftChild;
     }
 
-    public Node getRightChild() {
+    public Operator getOperator() {
+        return operator;
+    }
+    public String getOperatorSymbol(){
+        return operator.getSymbol();
+    }
+    public Token getRightChild() {
         return rightChild;
     }
-    @Override
-    public Object evaluate(){
-        Object left = leftChild.evaluate();
-        Object right = rightChild.evaluate();
-        if ((left instanceof Double || left instanceof Integer) &&( 
-            right instanceof Double || right instanceof Integer)) {
-            try {
-                NumberCalculator calculator = new NumberCalculator();   
-                Class[] arrayTypes = {left.getClass(),right.getClass()};
-                Method method = calculator.getClass().getMethod(name,arrayTypes);
-                Object[]arrayValue = {left,right};
-                return method.invoke(calculator, arrayValue);
-            } catch (Exception ex) {
-                Logger.getLogger(BynaryOperator.class.getName()).log(Level.SEVERE, null, ex);
-            }     
+
+    
+    public Object evaluate() {
+        Object obj;
+        
+        return metodo.invoke(this, os);
     }
-        return null;
     }
-}
+
+  

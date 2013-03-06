@@ -1,6 +1,6 @@
 package sintaxtrie;
 
-public interface Node {
+public interface Token {
    
      public Object evaluate();
      

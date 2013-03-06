@@ -1,20 +1,36 @@
 package arithmeticTree.operators;
 
-import sintaxtrie.Node;
+import Calculator.types.BooleanCalculator;
+import Calculator.types.NumberCalculator;
+import java.lang.reflect.Method;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sintaxtrie.Token;
 
-public abstract class UnaryOperator implements Operator {
+public class UnaryOperator extends Operation {
 
-    protected Node child;
+    private Operator operator;
+    protected Token child;
+   
 
-    public UnaryOperator(Node child) {
+    public UnaryOperator(Operator operator, Token child) {
+        this.operator = operator;
         this.child = child;
+       
     }
 
-    public Node getChild() {
+    public Token getChild() {
         return child;
     }
 
-    public void setChild(Node node) {
-        child = node;
+    public Operator getOperator() {
+        return operator;
+    }
+    public String getOperatorSymbol(){
+        return operator.getSymbol();
+    }
+    
+    public Object evaluate() {
+        return null;
     }
 }

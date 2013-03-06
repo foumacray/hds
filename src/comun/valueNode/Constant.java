@@ -1,9 +1,9 @@
 package comun.valueNode;
 
-import sintaxtrie.Node;
+import sintaxtrie.Token;
 import sintaxtrie.Value;
 
-public class Constant  implements Node {
+public class Constant  implements Token {
 
     Value number;
 

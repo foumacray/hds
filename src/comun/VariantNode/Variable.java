@@ -1,9 +1,9 @@
 package comun.VariantNode;
 
-import sintaxtrie.Node;
+import sintaxtrie.Token;
 import sintaxtrie.Value;
 
-public class Variable implements Node {
+public class Variable implements Token {
 
     private String name;
     private Value number;

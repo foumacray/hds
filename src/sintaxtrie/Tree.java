@@ -2,17 +2,17 @@ package sintaxtrie;
 
 public class Tree {
 
-    private Node root;
+    private Token root;
 
-    public Tree(Node root) {
+    public Tree(Token root) {
         this.root = root;
     }
 
-    public Node getRoot() {
+    public Token getRoot() {
         return root;
     }
 
-    public double evaluate() {
+    public Object evaluate() {
         return root.evaluate();
     }
 }
