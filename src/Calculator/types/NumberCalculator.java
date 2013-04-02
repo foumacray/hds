@@ -1,10 +1,11 @@
 
 package Calculator.types;
 
+import Calculator.Calculator;
 import Calculator.DivException;
 import arithmeticTree.operators.OperatorAnotation;
 
-public class NumberCalculator {
+public class NumberCalculator extends Calculator {
     @OperatorAnotation("+")
     public Double add(Double number1, Double number2){
         return number1+number2;

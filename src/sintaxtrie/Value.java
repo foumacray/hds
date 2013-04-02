@@ -11,5 +11,8 @@ public class Value<Tvalue> {
     public Tvalue getObjeto() {
         return objeto;
     }
+    public String ToString(){
+        return objeto.toString();
+    }
     
 }

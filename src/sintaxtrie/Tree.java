@@ -15,4 +15,10 @@ public class Tree {
     public Object evaluate() {
         return root.evaluate();
     }
+    public String toString(){
+        if (getRoot()!=null){
+        return getRoot().toSring();
+    }
+        return "";
+    }
 }

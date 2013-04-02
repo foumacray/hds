@@ -15,4 +15,9 @@ public class Constant  implements Token {
     public Object evaluate() {
         return number.getObjeto();
     }
+
+    @Override
+    public String toSring() {
+       return evaluate().toString();
+    }
 }

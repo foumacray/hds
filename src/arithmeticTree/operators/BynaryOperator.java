@@ -1,5 +1,6 @@
 package arithmeticTree.operators;
 
+import Calculator.Calculator;
 import Calculator.types.BooleanCalculator;
 import Calculator.types.NumberCalculator;
 import java.lang.reflect.*;
@@ -35,11 +36,51 @@ public class BynaryOperator extends Operation {
     }
 
     
-    public Object evaluate() {
-        Object obj;
-        
-        return metodo.invoke(this, os);
+    public Object evaluate() throws RuntimeException{
+        try {
+            Object left = leftChild.evaluate();
+            Object right = rightChild.evaluate();
+            
+            for(Method method : NumberCalculator.class.getDeclaredMethods()){
+                if(method.isAnnotationPresent(OperatorAnotation.class)){
+                    if(getSignature(operator,new Object[]{left,right}).equals(getMethodSignature(method))){
+                        Calculator calculator=new NumberCalculator();
+                         return method.invoke(calculator, new Object[]{leftChild,rightChild});
+                    }
+                }
+            }
+          
+                  
+                   
+        } catch (Exception ex) {
+            Logger.getLogger(BynaryOperator.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        return null;
+    }
+    
+    public String getSignature(Operator operator,Object[]objects){
+        String signature=operator.getSymbol();
+        for(Object object:objects){
+            signature+=object.getClass().getSimpleName();
+        }
+        return signature;
+    }
+    
+    public String getMethodSignature(Method method){
+     String signature=method.getAnnotation(OperatorAnotation.class).value();
+        for(Object object:method.getTypeParameters()){
+            signature+=object;
+        }
+        return signature;
+    }
+
+    @Override
+    public String toSring() {
+      return leftChild.toSring()+getOperatorSymbol()+rightChild.toSring();
     }
     }
 
   
+
+    
+            

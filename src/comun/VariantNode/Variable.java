@@ -29,4 +29,9 @@ public class Variable implements Token {
     public Object evaluate() {
         return number.getObjeto();
     }
+
+    @Override
+    public String toSring() {
+       return name;
+    }
 }

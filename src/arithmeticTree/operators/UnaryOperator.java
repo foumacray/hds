@@ -33,4 +33,9 @@ public class UnaryOperator extends Operation {
     public Object evaluate() {
         return null;
     }
+
+    @Override
+    public String toSring() {
+        return getOperatorSymbol()+"("+ child.toSring()+")";
+    }
 }
