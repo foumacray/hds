@@ -1,7 +1,9 @@
 package sintaxtrie;
 
-public interface Token {
+import Types.Value;
+
+public abstract class Token {
    
-     public Object evaluate();
-     public String toSring();
+     public abstract Value evaluate();
+     public abstract String toSring();
 }

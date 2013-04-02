@@ -1,5 +1,5 @@
 
-package Calculator;
+package Exceptions;
 
 public class DivException extends Throwable{
     

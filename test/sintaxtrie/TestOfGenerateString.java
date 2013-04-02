@@ -1,10 +1,7 @@
 
 package sintaxtrie;
 
-import arithmeticTree.operators.BynaryOperator;
-import arithmeticTree.operators.Operator;
-import arithmeticTree.operators.UnaryOperator;
-import comun.valueNode.Constant;
+import Types.Value;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

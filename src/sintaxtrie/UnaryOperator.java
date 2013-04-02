@@ -1,7 +1,7 @@
-package arithmeticTree.operators;
+package sintaxtrie;
 
 import Calculator.types.BooleanCalculator;
-import Calculator.types.NumberCalculator;
+import Types.Value;
 import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,15 +27,18 @@ public class UnaryOperator extends Operation {
         return operator;
     }
     public String getOperatorSymbol(){
-        return operator.getSymbol();
+        return operator.getOperator();
     }
     
-    public Object evaluate() {
-        return null;
-    }
+   
 
     @Override
     public String toSring() {
         return getOperatorSymbol()+"("+ child.toSring()+")";
+    }
+
+    @Override
+    public Value evaluate() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

@@ -1,14 +1,14 @@
 
 package Calculator.types;
 
-import Calculator.DivException;
-import arithmeticTree.operators.BynaryOperator;
-import arithmeticTree.operators.Operator;
-import comun.valueNode.Constant;
+import Exceptions.DivException;
+import sintaxtrie.BynaryOperator;
+import sintaxtrie.Operator;
+import sintaxtrie.Constant;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import sintaxtrie.Token;
-import sintaxtrie.Value;
+import Types.Value;
 
 public class NumberCalculatorTest {
     @Test

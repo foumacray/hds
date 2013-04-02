@@ -1,9 +1,9 @@
 package comun.VariantNode;
 
 import sintaxtrie.Token;
-import sintaxtrie.Value;
+import Types.Value;
 
-public class Variable implements Token {
+public class Variable extends Token {
 
     private String name;
     private Value number;
@@ -25,13 +25,15 @@ public class Variable implements Token {
         this.number = value;
     }
 
-    @Override
-    public Object evaluate() {
-        return number.getObjeto();
-    }
+   
 
     @Override
     public String toSring() {
        return name;
+    }
+
+    @Override
+    public Value evaluate() {
+       return number;
     }
 }

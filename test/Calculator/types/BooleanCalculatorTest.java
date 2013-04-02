@@ -1,12 +1,12 @@
 package Calculator.types;
 
-import arithmeticTree.operators.BynaryOperator;
-import arithmeticTree.operators.UnaryOperator;
-import comun.valueNode.Constant;
+import sintaxtrie.BynaryOperator;
+import sintaxtrie.UnaryOperator;
+import sintaxtrie.Constant;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import sintaxtrie.Token;
-import sintaxtrie.Value;
+import Types.Value;
 
 public class BooleanCalculatorTest {
 

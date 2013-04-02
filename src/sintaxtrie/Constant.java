@@ -1,9 +1,9 @@
-package comun.valueNode;
+package sintaxtrie;
 
 import sintaxtrie.Token;
-import sintaxtrie.Value;
+import Types.Value;
 
-public class Constant  implements Token {
+public class Constant  extends Token {
 
     Value number;
 
@@ -11,13 +11,13 @@ public class Constant  implements Token {
         this.number = number;
     }
 
-    @Override
-    public Object evaluate() {
-        return number.getObjeto();
-    }
-
-    @Override
+    
     public String toSring() {
        return evaluate().toString();
+    }
+
+    
+    public Value evaluate() {
+        return number;
     }
 }

@@ -1,5 +1,5 @@
 
-package sintaxtrie;
+package Types;
 
 public class Value<Tvalue> {
     private Tvalue objeto;
@@ -8,7 +8,7 @@ public class Value<Tvalue> {
         this.objeto = objeto;
     }
 
-    public Tvalue getObjeto() {
+    public Tvalue getValue() {
         return objeto;
     }
     public String ToString(){

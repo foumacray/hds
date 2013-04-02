@@ -1,9 +1,10 @@
 package comun.valueNode;
 
+import sintaxtrie.Constant;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import sintaxtrie.Token;
-import sintaxtrie.Value;
+import Types.Value;
 
 public class ConstantTest {
 
