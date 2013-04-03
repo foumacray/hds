@@ -1,7 +1,6 @@
-package comun.VariantNode;
+package sintaxtrie.nodes;
 
-import sintaxtrie.Token;
-import Types.Value;
+import sintaxtrie.nodes.valueTypes.Value;
 
 public class Variable extends Token {
 
@@ -17,7 +16,7 @@ public class Variable extends Token {
         return name;
     }
 
-    public Object getValue() {
+    public Value getValue() {
         return number;
     }
 
@@ -25,15 +24,13 @@ public class Variable extends Token {
         this.number = value;
     }
 
-   
-
     @Override
     public String toSring() {
-       return name;
+        return name;
     }
 
     @Override
     public Value evaluate() {
-       return number;
+        return number;
     }
 }

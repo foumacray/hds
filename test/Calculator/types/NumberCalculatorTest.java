@@ -1,95 +1,84 @@
-
 package Calculator.types;
 
-import Exceptions.DivException;
-import sintaxtrie.BynaryOperator;
-import sintaxtrie.Operator;
-import sintaxtrie.Constant;
+import sintaxtrie.nodes.valueTypes.IntegerValue;
+import sintaxtrie.nodes.operation.BynaryOperator;
+import sintaxtrie.nodes.operation.Operator;
+import sintaxtrie.nodes.Constant;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import sintaxtrie.Token;
-import Types.Value;
+import sintaxtrie.nodes.Token;
+import static org.mockito.Mockito.*;
+import sintaxtrie.nodes.operation.UnaryOperator;
+import sintaxtrie.nodes.valueTypes.DoubleValue;
 
 public class NumberCalculatorTest {
+
     @Test
-    public void addIntIntTest() {
-Value<Integer> val1 = new Value<Integer>(5);
-Value<Integer> val2 = new Value<Integer>(3);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("+"), node2,node3);
-assertEquals(8, node1.evaluate());
+    public void testAddDoubleDouble() {
+
+        Constant mock1 = mock(Constant.class);
+        when(mock1.evaluate()).thenReturn(new DoubleValue(5.));
+        Constant mock2 = mock(Constant.class);
+        when(mock2.evaluate()).thenReturn(new DoubleValue(3.));
+
+
+        Token token = new BynaryOperator(Operator.add, mock1, mock2);
+
+        assertEquals(8.0, (Double) token.evaluate().getValue(), 0.001);
     }
- public void addDoubleDoubleTest() {
-Value<Double> val1 = new Value<Double>(5.);
-Value<Double> val2 = new Value<Double>(3.);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("+"), node2,node3);
-assertEquals(8., node1.evaluate());
+
+    @Test
+    public void testAddDoubleInteger() {
+
+        Constant mock1 = mock(Constant.class);
+        when(mock1.evaluate()).thenReturn(new DoubleValue(5.));
+        Constant mock2 = mock(Constant.class);
+        when(mock2.evaluate()).thenReturn(new IntegerValue(3));
+
+
+        Token token = new BynaryOperator(Operator.add, mock1, mock2);
+
+        assertEquals(8.0, (Double) token.evaluate().getValue(), 0.001);
     }
-  public void addIntDoubleTest() {
-Value<Integer> val1 = new Value<Integer>(5);
-Value<Double> val2 = new Value<Double>(3.);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("+"), node2,node3);
-assertEquals(8, node1.evaluate());
+
+    @Test
+    public void testAddIntegerDouble() {
+
+        Constant mock1 = mock(Constant.class);
+        when(mock1.evaluate()).thenReturn(new IntegerValue(5));
+        Constant mock2 = mock(Constant.class);
+        when(mock2.evaluate()).thenReturn(new DoubleValue(3.));
+
+
+        Token token = new BynaryOperator(Operator.add, mock1, mock2);
+
+        assertEquals(8.0, (Double) token.evaluate().getValue(), 0.001);
     }
-   public void addDoubleIntTest() {
-Value<Double> val1 = new Value<Double>(5.);
-Value<Integer> val2 = new Value<Integer>(3);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("+"), node2,node3);
-assertEquals(8, node1.evaluate());
+
+    @Test
+    public void testAddIntegerInteger() {
+
+        Constant mock1 = mock(Constant.class);
+        when(mock1.evaluate()).thenReturn(new IntegerValue(5));
+        Constant mock2 = mock(Constant.class);
+        when(mock2.evaluate()).thenReturn(new IntegerValue(3));
+
+
+        Token token = new BynaryOperator(Operator.add, mock1, mock2);
+
+        assertEquals(8, token.evaluate().getValue());
     }
-   
-     public void divIntIntTest() {
-Value<Integer> val1 = new Value<Integer>(1);
-Value<Integer> val2 = new Value<Integer>(2);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("/"), node2,node3);
-assertEquals(8, node1.evaluate());
-    }
- public void divDoubleDoubleTest() {
-Value<Double> val1 = new Value<Double>(5.);
-Value<Double> val2 = new Value<Double>(3.);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("/"), node2,node3);
-assertEquals(8., node1.evaluate());
-    }
-  public void divIntDoubleTest() {
-Value<Integer> val1 = new Value<Integer>(5);
-Value<Double> val2 = new Value<Double>(3.);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("/"), node2,node3);
-assertEquals(8, node1.evaluate());
-    }
-   public void divDoubleIntTest() {
-Value<Double> val1 = new Value<Double>(5.);
-Value<Integer> val2 = new Value<Integer>(3);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("/"), node2,node3);
-assertEquals(8, node1.evaluate());
-    }
-    public void divSecondParameterIqual0() {
-Value<Double> val1 = new Value<Double>(5.);
-Value<Integer> val2 = new Value<Integer>(0);
-Token node2= new Constant(val1);
-Token node3= new Constant(val2);
-Token node1 = new BynaryOperator(Operator.get("/"), node2,node3);
-try{
-assertEquals(8, node1.evaluate());
-fail();
-System.out.printf("Doesn't occur the exception");
-}
-catch(Exception e){
-    assertTrue(true);
-}
+
+    @Test
+    public void testsinInteger() {
+
+        Constant mock1 = mock(Constant.class);
+        when(mock1.evaluate()).thenReturn(new IntegerValue(0));
+
+
+
+        Token token = new UnaryOperator(Operator.sin, mock1);
+
+        assertEquals(0, token.evaluate().getValue());
     }
 }

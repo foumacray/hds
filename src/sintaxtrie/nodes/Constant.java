@@ -1,9 +1,8 @@
-package sintaxtrie;
+package sintaxtrie.nodes;
 
-import sintaxtrie.Token;
-import Types.Value;
+import sintaxtrie.nodes.valueTypes.Value;
 
-public class Constant  extends Token {
+public class Constant extends Token {
 
     Value number;
 
@@ -11,12 +10,10 @@ public class Constant  extends Token {
         this.number = number;
     }
 
-    
     public String toSring() {
-       return evaluate().toString();
+        return evaluate().getValue().toString();
     }
 
-    
     public Value evaluate() {
         return number;
     }

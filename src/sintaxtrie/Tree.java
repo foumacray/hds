@@ -1,5 +1,7 @@
 package sintaxtrie;
 
+import sintaxtrie.nodes.Token;
+
 public class Tree {
 
     private Token root;
@@ -15,10 +17,11 @@ public class Tree {
     public Object evaluate() {
         return root.evaluate();
     }
-    public String toString(){
-        if (getRoot()!=null){
-        return getRoot().toSring();
-    }
+
+    public String toString() {
+        if (getRoot() != null) {
+            return getRoot().toSring();
+        }
         return "";
     }
 }

@@ -1,17 +1,12 @@
-package sintaxtrie;
-
-
+package sintaxtrie.nodes.operation;
 
 import Calculator.CalculatorsMethods;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import sintaxtrie.Token;
-import Types.Value;
-
+import sintaxtrie.nodes.Token;
+import sintaxtrie.nodes.valueTypes.Value;
 
 public class BynaryOperator extends Operation {
+
     private Operator operation;
     private Token leftChild;
     private Token rightChild;
@@ -21,7 +16,7 @@ public class BynaryOperator extends Operation {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
-    
+
     @Override
     public Value evaluate() {
         Value left = leftChild.evaluate();
@@ -32,28 +27,21 @@ public class BynaryOperator extends Operation {
     private Value execute(Value left, Value right) {
         try {
             Method method = CalculatorsMethods.methodsMap.get(getSignature(left, right));
-            return (Value)(method.invoke(method.getDeclaringClass().newInstance(),left, right));
-        }
-        catch (Exception ex) {
+            return (Value) (method.invoke(method.getDeclaringClass().newInstance(), left, right));
+        } catch (Exception ex) {
             System.out.println(ex);
             return null;
         }
-        
+
     }
-    
-    private String getSignature(Value left, Value right){
-        String signature = operation.getName()+ left.getClass().getSimpleName()+right.getClass().getSimpleName();
+
+    private String getSignature(Value left, Value right) {
+        String signature = operation.getName() + left.getClass().getSimpleName() + right.getClass().getSimpleName();
         return signature;
     }
 
     @Override
     public String toSring() {
-       return leftChild.toSring()+operation.getOperator()+rightChild.toSring();
+        return leftChild.toSring() + operation.getOperator() + rightChild.toSring();
     }
-
 }
-
-  
-
-    
-            

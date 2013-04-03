@@ -1,7 +1,7 @@
-
-package Types;
+package sintaxtrie.nodes.valueTypes;
 
 public class Value<Tvalue> {
+
     private Tvalue objeto;
 
     public Value(Tvalue objeto) {
@@ -11,8 +11,8 @@ public class Value<Tvalue> {
     public Tvalue getValue() {
         return objeto;
     }
-    public String ToString(){
+
+    public String ToString() {
         return objeto.toString();
     }
-    
 }
