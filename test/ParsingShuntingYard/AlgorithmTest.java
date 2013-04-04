@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AlgorithmTest {
-    
-    public AlgorithmTest() {
+    @Test
+    public void AlgorithmTest() {
     }
 }
